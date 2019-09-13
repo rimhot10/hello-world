@@ -11,18 +11,30 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function myCaptcha()
     {
-        $this->middleware('auth');
+        return view('myCaptcha');
     }
+
+    public function myCaptchaPost(Request $request)
+    {
+
+        request()->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            'captcha' => 'required|captcha'],
+        ['captcha.captcha'=>'invalid captcha code.']);
+        dd("Mataku a :) .");
+    }
+
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function refreshCaptcha()
     {
-        return view('home');
-    }
+        return response()->json(['captcha'=> captcha_img()]);
+    } 
 }

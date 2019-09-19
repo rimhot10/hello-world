@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -11,21 +12,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function myCaptcha()
-    {
-        return view('myCaptcha');
-    }
-
-    public function myCaptchaPost(Request $request)
-    {
-
-        request()->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-            'captcha' => 'required|captcha'],
-        ['captcha.captcha'=>'invalid captcha code.']);
-        dd("Mataku a :) .");
-    }
+   public function __construct()
+   {
+    $this->middleware('auth');
+   }
 
 
     /**
@@ -33,8 +23,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function refreshCaptcha()
+    public function index()
     {
-        return response()->json(['captcha'=> captcha_img()]);
+        return view('home');
     } 
 }

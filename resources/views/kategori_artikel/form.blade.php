@@ -1,7 +1,3 @@
-@extends('layouts.app')
-
-
-@section('content')
 @csrf
                     <div class="form-group row">
                             <label for="nama" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
@@ -22,11 +18,9 @@
                       
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-sm btn-primary">
                                     {{ __('Simpan') }}
                                 </button>
                                  <a href="{!! route('kategori_artikel.index')!!}" class="btn btn-sm btn-danger">Batal </a></td>
                              </div>
                         </div>
-
-@endsection

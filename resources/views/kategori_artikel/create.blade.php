@@ -9,7 +9,7 @@
 				<div class="card-header"> list kategori artikel</div>
 					<div class="card-body">
 						<form method="POST" action="{!! route('kategori_artikel.store') !!}">
-							@include('kategori_artikel.form')
+							@include('kategori_artikel.form');
 						</form>
 					</div>
 				</div>

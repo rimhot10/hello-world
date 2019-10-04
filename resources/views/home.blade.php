@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    KAMU SUDAH MASUKKAN DATA-MU
                 </div>
             </div>
         </div>

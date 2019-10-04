@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    GUYON :) WATON
                 </div>
 
                 <div class="links">

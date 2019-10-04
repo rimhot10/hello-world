@@ -6,10 +6,10 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 			<div class="card">
-				<div class="card-header">kategori artikel</div>
+				<div class="card-header">Kategori Berita</div>
 					<div class="card-body">
-						<form method="POST" action="{!! route('kategori_artikel.store') !!}">
-							@include('kategori_artikel.form');
+						<form method="POST" action="{!! route('kategori_berita.store') !!}">
+							@include('kategori_berita.form');
 						</form>
 					</div>
 				</div>

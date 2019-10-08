@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -33,7 +33,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        @auth
                         <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     MENU <span class="caret"></span>
@@ -47,6 +46,7 @@
                                 <a class="dropdown-item" href="{{ route('berita.index') }}">{{ __('Berita') }}</a>
 
                                 <a class="dropdown-item" href="{{ route('galeri.index') }}">{{ __('Galeri') }}</a>
+                                
                                 <a class="dropdown-item" href="{{ route('pengumuman.index') }}">{{ __('Pengumuman') }}</a>
 
                                 <a class="dropdown-item" href="{{ route('kategori_berita.index') }}">{{ __('Kategori Berita') }}</a>
@@ -62,7 +62,8 @@
                                 </div>
                             </li>
                                 
-                        @endauth
+                        
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -102,17 +103,8 @@
         </nav>
 
         <main class="py-4">
-
             @yield('content')
         </main>
     </div>
-
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous">
-      
-  </script>
-  @yield('scripts')
 </body>
 </html>

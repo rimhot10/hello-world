@@ -12,19 +12,19 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="kontak" class="col-md-4 col-form-label text-md-right">{{ __('Contact') }}</label>
+                            <label for="kontak" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
 
                             <div class="col-md-6">
-                                <input id="kontak" type="kontak" class="form-control @error('kontak') is-invalid @enderror" name="kontak" value="{{ old('kontak') }}" required autocomplete="kontak" autofocus>
+                                <input id="kontak" type="telp" class="form-control @error('kontak') is-invalid @enderror" name="kontak" value="{{ old('kontak') }}" required autocomplete="kontak" autofocus>
 
-                                @error('Contact')
+                                @error('kontak')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-                         
+
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
@@ -37,20 +37,21 @@
                                     </span>
                                 @enderror
                             </div>
-
                         </div>
 
-                         <div class="form-group row">
+                        <div class="form-group row">
                             <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Captcha') }}</label>
 
                             <div class="col-md-6">
-                                <div class="captcha">
-                                    <img src="{{captcha_src('flat')}}" onclick="this.src='/captcha/flat?'+Math.random()" id="captchaCode" alt="" class="captcha">
-                                    <a rel="nofollow" href="javascript:;" onclick="document.getElementById('captchaCode').src='captcha/flat?'+Math.random()" class="refresh">
-                                        <button type="button" class="btn btn-success btn-refresh">Refresh</button>
-                                    </a>
-                                </div>
-                                <input id="captcha" type="captcha" class="form-control mt-2 @error('captcha') is-invalid @enderror" name="captcha" placeholder="Enter Captcha">
+
+                                <img src="{{captcha_src('flat')}}" onclick="this.src='/captcha/flat?'+Math.random()" id="captchaCode" alt="" class="captcha">
+                   
+                            <a rel="nofollow" href="javascript:;" onclick="document.getElementById('captchaCode').src='captcha/flat?'+Math.random()" class="refresh">
+                                                  
+                              <button type="button" class="btn btn-info btn-refresh">Refresh</button>
+
+                            </a>
+                                <input id="captcha" type="text" class="form-control @error('captcha') is-invalid @enderror" name="captcha" required placeholder="Masukkan Captcha">
 
                                 @error('captcha')
                                     <span class="invalid-feedback" role="alert">
